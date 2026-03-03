@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Website Analyzer</title>
+</head>
+<body>
+  <div class="app">
+
+    <header class="header fade-in">
+      <h1>Website Analyzer</h1>
+      <p>Modern performance insights powered by Google PageSpeed</p>
+    </header>
+<h3>
+  Core Web Vitals
+  <span class="lab-badge">Lab Data</span>
+</h3>
+
+    <div class="input-card glass fade-in">
+      <input type="text" id="url" placeholder="Enter website URL" />
+      <button onclick="analyze()">Analyze</button>
+    </div>
+
+    <div class="dashboard">
+<!-- Score Cards -->
+<div class="score-cards fade-in">
+  <div class="score-card">
+    <p>Performance</p>
+    <h2 id="perfScore">0</h2>
+  </div>
+  <div class="score-card">
+    <p>SEO</p>
+    <h2 id="seoScore">0</h2>
+  </div>
+  <div class="score-card">
+    <p>Accessibility</p>
+    <h2 id="accScore">0</h2>
+  </div>
+</div>
+
+      <div class="glass card fade-in">
+        <h3>Performance Overview</h3>
+      <div class="chart-box">
+  <canvas id="pieChart"></canvas>
+</div>
+
+      </div>
+
+      <div class="glass card fade-in">
+     <h3>Core Web Vitals</h3>
+
+<div class="vitals-grid">
+  <div class="vital-card" id="lcpBadge"></div>
+  <div class="vital-card" id="clsBadge"></div>
+  <div class="vital-card" id="inpBadge"></div>
+</div>
+
+
+      </div>
+<div class="glass card fade-in">
+  <h3>Recommendations</h3>
+  <ul id="recommendations" class="recommendations"></ul>
+</div>
+      <div class="glass card wide fade-in">
+        <h3>Detailed Report</h3>
+        <table>
+          <tbody id="reportTable"></tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+<div id="loadingOverlay" class="loading hidden">
+  <div class="spinner"></div>
+  <p>Analyzing website performance…</p>
+</div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
